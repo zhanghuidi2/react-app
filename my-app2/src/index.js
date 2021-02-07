@@ -45,8 +45,8 @@ const jsx = (<div className={styles.app}>hello,
 // 7.模块化 去配置文件里modules=true
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
-    {jsx}
+    <App />
+    {/* {jsx} */}
   </React.StrictMode>,
   document.getElementById('root')
 );
