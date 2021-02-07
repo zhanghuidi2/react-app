@@ -2,12 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 import ClassComponent from './page/classComponents';
 import FunctionComponents from './page/functionComponents';
+import SetState from './page/setState';
 
 function App() {
   return (
     <div>
       <ClassComponent />
       <FunctionComponents />
+      <SetState />
     </div>
     // <div className="App">
     //   <header className="App-header">
