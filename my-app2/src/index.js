@@ -42,7 +42,7 @@ const jsx = (<div className={styles.app}>hello,
 // 4.条件语句
 // 5.循环语句
 // 6.属性
-// 7.模块化
+// 7.模块化 去配置文件里modules=true
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
