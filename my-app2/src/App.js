@@ -3,13 +3,15 @@ import './App.css';
 import ClassComponent from './page/classComponents';
 import FunctionComponents from './page/functionComponents';
 import SetState from './page/setState';
+import HomePage from './page/HomePage';
 
 function App() {
   return (
-    <div>
-      <ClassComponent />
+    <div style={ {height:'100%'} }>
+      {/* <ClassComponent />
       <FunctionComponents />
-      <SetState />
+      <SetState /> */}
+      <HomePage />
     </div>
     // <div className="App">
     //   <header className="App-header">

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './index.css';
-import styles from './app.modules.css'
+import './index.css';
+// import styles from './app.modules.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import logo from './logo.svg'
@@ -20,21 +20,21 @@ const showFlag = true
 const arr = [1, 2, 3]
 // 表达式
 const temp = <p>hahhaha</p>
-const jsx = (<div className={styles.app}>hello,
-    <div>{obj.firstName + ' ' + obj.lastName}</div>
-    <div>{formate(obj)}</div>
-    {showFlag?'3':'4'}
-    {showFlag&&temp}
-    <ul>
-      {arr.map(item=>(
-        <li key={item}>{item}</li>
-      ))}
-    </ul>
-    <img src={logo} 
-    // className="logo"
-    className={styles.logo} 
-    style={{width:'50px',height:'50px'}}></img>
-  </div>)
+// const jsx = (<div className={styles.app}>hello,
+//     <div>{obj.firstName + ' ' + obj.lastName}</div>
+//     <div>{formate(obj)}</div>
+//     {showFlag?'3':'4'}
+//     {showFlag&&temp}
+//     <ul>
+//       {arr.map(item=>(
+//         <li key={item}>{item}</li>
+//       ))}
+//     </ul>
+//     <img src={logo} 
+//     // className="logo"
+//     className={styles.logo} 
+//     style={{width:'50px',height:'50px'}}></img>
+//   </div>)
 
 // 1.jsx表达式{}
 // 2.对象
@@ -55,6 +55,3 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-console.log(
-'===',styles
-)

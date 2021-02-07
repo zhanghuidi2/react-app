@@ -18,7 +18,7 @@ class setState extends Component {
   // setCounter = () => {
   //   this.changeValue(1)
   // }
-  
+
   componentDidMount() {
     // this.setState({
     //   counter: this.state.counter + 3
@@ -33,7 +33,7 @@ class setState extends Component {
     //   // 在生命周期里，setState是异步的
     //   console.log(this.state.counter)
     // })
-
+    console.log(this)
   }
   changeValue(v) {
     // this.setState({
