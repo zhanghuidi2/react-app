@@ -9,6 +9,7 @@ import PageRedux from './page/pageRedux';
 import RouterPage from './page/routerPage';
 import PureCom from './page/pureCom';
 import LifeCycle from './page/lifeCyclePage';
+import EffectPage from './page/effectPage';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
       {/* <PageRedux /> */}
       {/* <RouterPage /> */}
       {/* <PureCom /> */}
-      <LifeCycle />
+      {/* <LifeCycle /> */}
+      <EffectPage />
     </div>
   );
 }
