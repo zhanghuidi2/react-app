@@ -6,6 +6,7 @@ import SetState from './page/setState';
 import HomePage from './page/HomePage';
 import StoreComponents from './page/storeComponents';
 import PageRedux from './page/pageRedux';
+import RouterPage from './page/routerPage';
 function App() {
   return (
     <div style={ {height:'100%'} }>
@@ -14,7 +15,8 @@ function App() {
       <SetState /> */}
       {/* <HomePage /> */}
       {/* <StoreComponents /> */}
-      <PageRedux />
+      {/* <PageRedux /> */}
+      <RouterPage />
     </div>
   );
 }
