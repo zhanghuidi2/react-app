@@ -8,6 +8,7 @@ import StoreComponents from './page/storeComponents';
 import PageRedux from './page/pageRedux';
 import RouterPage from './page/routerPage';
 import PureCom from './page/pureCom';
+import LifeCycle from './page/lifeCyclePage';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
       {/* <StoreComponents /> */}
       {/* <PageRedux /> */}
       {/* <RouterPage /> */}
-      <PureCom />
+      {/* <PureCom /> */}
+      <LifeCycle />
     </div>
   );
 }
