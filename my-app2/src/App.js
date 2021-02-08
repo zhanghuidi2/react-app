@@ -7,6 +7,8 @@ import HomePage from './page/HomePage';
 import StoreComponents from './page/storeComponents';
 import PageRedux from './page/pageRedux';
 import RouterPage from './page/routerPage';
+import PureCom from './page/pureCom';
+
 function App() {
   return (
     <div style={ {height:'100%'} }>
@@ -16,7 +18,8 @@ function App() {
       {/* <HomePage /> */}
       {/* <StoreComponents /> */}
       {/* <PageRedux /> */}
-      <RouterPage />
+      {/* <RouterPage /> */}
+      <PureCom />
     </div>
   );
 }
