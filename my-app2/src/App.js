@@ -4,6 +4,7 @@ import ClassComponent from './page/classComponents';
 import FunctionComponents from './page/functionComponents';
 import SetState from './page/setState';
 import HomePage from './page/HomePage';
+import StoreComponents from './page/storeComponents';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       {/* <ClassComponent />
       <FunctionComponents />
       <SetState /> */}
-      <HomePage />
+      {/* <HomePage /> */}
+      <StoreComponents />
     </div>
     // <div className="App">
     //   <header className="App-header">
