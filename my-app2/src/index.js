@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import logo from './logo.svg'
 import store from './store/store'
+import { Provider } from 'react-redux'
 // 对象
 const obj = {
   firstName: 'zhang',
@@ -44,18 +45,30 @@ const temp = <p>hahhaha</p>
 // 5.循环语句
 // 6.属性
 // 7.模块化 去配置文件里modules=true
-
-  const render = () => {
-    ReactDOM.render(
-      <React.StrictMode>
-        <App />
-        {/* {jsx} */}
-      </React.StrictMode>,
-      document.getElementById('root')
-    );
-  }
-  render()
-  store.subscribe(render)
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+    
+    {/* {jsx} */}
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+  // const render = () => {
+  //   ReactDOM.render(
+  //     <React.StrictMode>
+  //       <Provider store={store}>
+  //         <App />
+  //       </Provider>
+        
+  //       {/* {jsx} */}
+  //     </React.StrictMode>,
+  //     document.getElementById('root')
+  //   );
+  // }
+  // render()
+  // store.subscribe(render)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
