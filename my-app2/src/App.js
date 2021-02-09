@@ -10,7 +10,8 @@ import RouterPage from './page/routerPage';
 import PureCom from './page/pureCom';
 import LifeCycle from './page/lifeCyclePage';
 import EffectPage from './page/effectPage';
-
+import UserMemo from './page/useMemo';
+import UseCallbackPage from './page/UseCallback';
 function App() {
   return (
     <div style={ {height:'100%'} }>
@@ -23,7 +24,9 @@ function App() {
       {/* <RouterPage /> */}
       {/* <PureCom /> */}
       {/* <LifeCycle /> */}
-      <EffectPage />
+      {/* <EffectPage /> */}
+      {/* <UserMemo /> */}
+      <UseCallbackPage />
     </div>
   );
 }
