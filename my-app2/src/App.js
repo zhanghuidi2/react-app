@@ -12,6 +12,7 @@ import LifeCycle from './page/lifeCyclePage';
 import EffectPage from './page/effectPage';
 import UserMemo from './page/useMemo';
 import UseCallbackPage from './page/UseCallback';
+import ProtalPage from './page/protalPage';
 function App() {
   return (
     <div style={ {height:'100%'} }>
@@ -26,7 +27,8 @@ function App() {
       {/* <LifeCycle /> */}
       {/* <EffectPage /> */}
       {/* <UserMemo /> */}
-      <UseCallbackPage />
+      {/* <UseCallbackPage /> */}
+      <ProtalPage />
     </div>
   );
 }
