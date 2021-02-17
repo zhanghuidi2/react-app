@@ -20,7 +20,7 @@ function App() {
       <FunctionComponents />
       <SetState /> */}
       {/* <HomePage /> */}
-      {/* <StoreComponents /> */}
+      <StoreComponents />
       {/* <PageRedux /> */}
       {/* <RouterPage /> */}
       {/* <PureCom /> */}
@@ -28,7 +28,7 @@ function App() {
       {/* <EffectPage /> */}
       {/* <UserMemo /> */}
       {/* <UseCallbackPage /> */}
-      <ProtalPage />
+      {/* <ProtalPage /> */}
     </div>
   );
 }
