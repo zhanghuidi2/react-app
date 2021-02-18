@@ -1,3 +1,33 @@
+// 累加器
+const arr = [1, 2, 3, 4]
+arr.reduce((total, item) => (total + item), 1)
+
+// json去重
+const arr1 = [
+  {name: '小明', age: 16},
+  {name: '小明', age: 18},
+  {name: '小明', age: 16}
+]
+const obj = {}
+arr1.reduce((total, item) => {
+  !obj[item.age] && total.push(item) && (obj[item.age] = true)
+  return total // return给下一次循环
+},[])
+
+// 计算数组里不同数据出现的次数
+const arr2 = [1, 1, 2, 3, 3, 3, 3, 4, 4, 5, 5]
+
+arr2.reduce((total, item) => {
+  total[item] ? total[item] += 1 : (total[item] = 1)
+  return total // return给下一次循环
+}, {})
+
+// 计算数组里出现的最大数据
+const arr3 = [1, 3, 4, 6, 7]
+arr3.reduce((total, item) => {
+  return total = total > item ? total : item
+})
+
 // 函数式编程合成compoes
 
 function f1(args) {
@@ -19,7 +49,7 @@ f3('oh~~')
 
 // 嵌套
 
-f3(f2(f1('oh~~')))
+f1(f2(f3('oh~~')))
 
 // 合成
 
@@ -41,8 +71,8 @@ console.log(test(f1)('oh!!!!')) // 和上面打印的结果是一样的
 
 function testFun(f) {
   return (...args) => { 
-    console.log(args) // 这里的写法就是给一个匿名函数，然后返回参数的那个函数f，然后参数依旧给f
-    return f(args)
+    console.log(...args) // 这里的写法就是给一个匿名函数，然后返回参数的那个函数f，然后参数依旧给f
+    return f(...args)
   }
 }
 console.log(testFun(f1)('oh!!!!')) // 和上面打印的结果是一样的
@@ -62,23 +92,24 @@ function compoes(...fun) {
   }
   // return fun.reduce((a, b) => {
   //   return (...arg) => {
-  //     return a(b(arg))
+  //     return a(b(...arg))
   //   }
   // })
   
   // 双箭头函数
   return fun.reduce((a, b) => (...arg) => a(b(...arg)))
 }
+compoes(f1)()
 
 // 中间件那里的逻辑
 function dispatch(action) {
   console.log('dispatch', action)
 }
 function applyMiddle(...arg) {
-  // arg = [thunk, loger]
+  // arg = [thunk, logger]
   const api = {
     getState: 1,
-    dispatch: (arg) => dispatch(arg)
+    dispatch: (...s) => dispatch(...s)
   }
   // arg是数组，map之后得到新的数组，所以argChain是一个新的数组，数组里面放的都是每一个arg的item并且传入了参数，但是这里并没有调这些方法，而是返回了匿名函数
   // argChain= [
@@ -89,14 +120,14 @@ function applyMiddle(...arg) {
   //     return arg[1](api)
   //   }
   // ]
-  argChain = arg.map((ware) => ware(api))
+  argChain = arg.map((ware) => () => ware(api))
   const dispatch = compoes(...argChain)(dispatch)
   return {dispatch}
 }
 
 // 中间件thunk
 function thunk({ getState, dispatch }) {
-  // 这里要返回函数，不然第93行换入的参数dispath都没法接受了
+  // // 这里要返回函数，不然第93行换入的参数dispath都没法接受了
   return (arg1) => {
     // 因为arg1里面也是一个函数,就是action
     return (arg2) => {
@@ -106,6 +137,7 @@ function thunk({ getState, dispatch }) {
       return arg1(arg2)
     }
   }
+
 }
 
 // 在课件中用了next和action

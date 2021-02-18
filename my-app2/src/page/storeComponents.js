@@ -19,12 +19,9 @@ class storeComponents extends Component {
     this.unsubscribe && this.unsubscribe()
   }
   asyncAdd() {
-    // setTimeout(() => {
-    //   store.dispatch({type: 'ADD'})
-    // }, 1000)
     store.dispatch(() => {
       setTimeout(() => {
-        {type: 'ADD'}
+        store.dispatch({type: 'ADD'})
       }, 1000)
     })
   }

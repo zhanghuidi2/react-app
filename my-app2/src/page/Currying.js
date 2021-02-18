@@ -9,7 +9,7 @@ function add(x, y) {
   return x + y
 }
 
-// 这样的话我调用的时候必须直接穿两个参数
+// 这样的话我调用的时候必须直接传入两个参数
 
 console.log(add(1, 2)) // 3
 
@@ -20,7 +20,9 @@ function add2(x) {
   return function (y) {
     return x + y
   }
+  
 }
+
 // 这里第一次调用的时候会形成闭包，因为访问了局部的x,并且在函数内部访问了x
 
 console.log(add2(1)(2)) // 3
