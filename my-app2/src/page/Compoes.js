@@ -31,7 +31,7 @@ arr3.reduce((total, item) => {
 // 函数式编程合成compoes
 
 function f1(args) {
-  console.log('f1', args);
+console.log('f1', args);
 }
 
 function f2(args) {

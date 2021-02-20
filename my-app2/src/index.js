@@ -47,9 +47,9 @@ const temp = <p>hahhaha</p>
 // 7.模块化 去配置文件里modules=true
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
+    {/* <Provider store={store}> */}
       <App />
-    </Provider>
+    {/* </Provider> */}
     
     {/* {jsx} */}
   </React.StrictMode>,

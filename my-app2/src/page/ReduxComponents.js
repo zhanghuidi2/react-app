@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import store from '../store/store'
-class storeComponents extends Component {
+class ReduxComponents extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -36,4 +36,4 @@ class storeComponents extends Component {
   }
 }
 
-export default storeComponents;
+export default ReduxComponents;
