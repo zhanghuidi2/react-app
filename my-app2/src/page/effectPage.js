@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from 'react';
+import React, { useState, useEffect, useReducer, useCallback } from 'react';
 import store from '../store/store'
 export default function EffectPage() {
   const [count, setCount] = useState(0)
@@ -26,7 +26,7 @@ export default function EffectPage() {
       forceUpdate()
     })
     return ()=>unsubscribe()
-  })
+  }, [store])
   return (
     <div>
       {/* <p onClick={()=>setCount(count + 1)}>{count}</p> */}
@@ -55,11 +55,36 @@ function useClock() {
 // 在类组件里有forceUpdate()更新或者刷新当前组件
 // 在函数组件里怎么实现
 // 方法1: useReducer接收三个参数，自定义reducer,初始值，和init函数
-// const [, forceUpdate] = useReducer(x=>x+1, 0) // 直接调用forceUpdate(就可以了)
+// const [, forceUpdate] = useReducer((x=>x+1, 0) // 直接调用forceUpdate(就可以了)
 // 方法2: 
 // const [, forceUpdate] = useState({}) // 调用调用forceUpdate({}),需要加一个对象，每一次的对象都不想等
 // 方法3:自定义hook
+// function useForceUpdate() {
+//   const [, forceUpdate] = useState(0)
+//   return function() {forceUpdate(prev=>prev+1)}
+// }
+// 加上useCallback,缓存一下
 function useForceUpdate() {
-  const [, forceUpdate] = useState(0)
-  return ()=>forceUpdate(x=>x+1)
+  const [, setState] = useState(0)
+  const forceUpdate = useCallback(
+    () => setState(prev => prev + 1),
+    []
+  )
+  return forceUpdate
+
 }
+  
+
+// const counterReducer = (state = 1, action) => {
+  // switch (action.type) {
+  //   case 'ADD':
+  //     return state + 1;
+  //   case 'MINUS':
+  //     return state - 1;
+  //   default:
+  //     return state;
+  // }
+  // return state + action
+// }
+// const [num, setNum] = useReducer(counterReducer, 0)
+// setNum(1)

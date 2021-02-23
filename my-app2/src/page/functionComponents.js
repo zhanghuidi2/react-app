@@ -10,7 +10,10 @@ export default function FunctionComponents() {
     // 这里相当于componentWillUnmount
     return () => clearInterval(timer)
   }, [])
+  const add = () => {
+    console.log('00');
+  }
   return (
-    <div>{date.toLocaleTimeString()}</div>
+    <div onClick={add}>{date.toLocaleTimeString()}</div>
   )
 }

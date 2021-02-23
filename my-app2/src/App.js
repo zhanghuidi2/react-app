@@ -15,25 +15,27 @@ import UseCallbackPage from './page/UseCallback';
 import ProtalPage from './page/protalPage';
 import ReactRedux from './page/ReactRedux';
 import ContextCom from './page/ContextComponents';
+import RouterPage2 from './page/routerPage2';
 
 function App() {
   return (
     <div style={ {height:'100%'} }>
-      {/* <ClassComponent />
-      <FunctionComponents />
-      <SetState /> */}
+      {/* <ClassComponent /> */}
+       {/* <FunctionComponents /> */}
+      {/* <SetState /> */}
       {/* <HomePage /> */}
       {/* <ReduxComponents /> */}
       {/* <ReactRedux1 /> */}
       {/* <RouterPage /> */}
       {/* <PureCom /> */}
       {/* <LifeCycle /> */}
-      <EffectPage />
+      {/* <EffectPage /> */}
       {/* <UserMemo /> */}
       {/* <UseCallbackPage /> */}
       {/* <ProtalPage /> */}
       {/* <ReactRedux /> */}
       {/* <ContextCom /> */}
+      <RouterPage2 />
     </div>
   );
 }

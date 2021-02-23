@@ -80,7 +80,7 @@ class Child extends Component {
 //       //     )
 //       //   }
 //       // </context.Consumer>
-//       <context.Consumer>
+//       <GlobalContext.Consumer>
 //         {
 //           ({ name, age }) => (
 //             <div>
@@ -88,7 +88,7 @@ class Child extends Component {
 //             </div>
 //           )
 //         }
-//       </context.Consumer>
+//       </GlobalContext.Consumer>
 //     )
 //   }
 // }
@@ -101,7 +101,7 @@ class Child extends Component {
 //     this.state = {}
 //   }
 //   // 1.把context变量负值给静态属性，因为这里只能负值一次
-//   static contextType = context
+//   static contextType = GlobalContext
 //   render() { 
 //     // 2.拿到value
 //     const { name, age } = this.context
@@ -119,7 +119,7 @@ class Child extends Component {
 
 // // 函数组件 useContext,可以消费多个
 // function Grandson() {
-//   const { name, age } = useContext(context)
+//   const { name, age } = useContext(GlobalContext)
 //   const {color} = useContext(ThemeContext)
 //   return (
 //     // 子组件消费

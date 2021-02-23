@@ -44,6 +44,7 @@ class ReactRedux extends Component {
         <p>react-redux</p>
         <p>{count}</p>
         <button onClick={add}>按钮</button>
+        <button onClick={()=>dispatch({type: 'ADD'})}>按钮</button>
       </div>
     );
   }
