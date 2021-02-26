@@ -1,7 +1,7 @@
 import React, { Component, useCallback } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux'
 // import { bindActionCreators } from 'redux'
-import bindActionCreators from '../kcode/bindActionCreators'
+import bindActionCreators from '../kReactRedux/bindActionCreators'
 // 装饰器写法，普通写法是export default @connect()()
 /**
  * connect参数有两个，第一个是state,第二个是派发的方法，格式是obj | function

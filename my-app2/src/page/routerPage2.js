@@ -1,5 +1,12 @@
 import React, { Component,useState } from 'react';
-import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom'
+// import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom'
+// import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Link, Route, Switch} from '../kRouter/index'
+
+
+
+import GoodsPage from '../components/GoodsPage';
+import HomePage from '../components/HomePage';
 
 // 路由还有BrowserRouter、HashRouter和MemoryRouter
 // 前两者的区别就是vue路由的区别一个道理
@@ -7,8 +14,14 @@ import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom'
 // HashRouter服务端不需要配置，但是功能没有上面的全面， #后面的服务端不会解析，所以不需要额外的配置
 // MemoryRouter是浏览器地址栏不发生变化，页面还是会动态变化
 
-import GoodsPage from '../components/GoodsPage';
-import HomePage from '../components/HomePage';
+
+// 重定向和路由拦截Prompt
+{/* <Prompt
+  when={formIsHalfFilledOut}
+  message="Are you sure you want to leave?"
+/> */}
+// withRouter
+
 class RouterPage2 extends Component {
   constructor(props) {
     super(props);
@@ -35,21 +48,31 @@ class RouterPage2 extends Component {
             {/* 8. 嵌套路由 */}
             <Link to="/parentPage">嵌套路由</Link>
             {/* <Switch> */}
-              {/* <Route children={Page_404}></Route> */}
+              <Route children={Page_404}></Route>
               {/* 4.children>>component>>render，源码规定，不在独占路由里，如果写了children,并且是函数，那么他是跟谁也不匹配，都展示的 */}
               {/* 5.children和render只能接收函数，components接收组件，如果使用内敛函数，那么将会认为两个组件都不想等，会一直卸载和挂载 
                 函数而不是函数组件
               */}
               <Route path="/" exact
-                // component={HomePage}
+                component={HomePage}
                 // render={Mine}
-                children={Page_404}
+                // children={Page_404}
                 // component={() => <HomePage />}
               >
                 {/* 6.这里也相当于是children */}
                 {/* omg */}
-              </Route>
-              <Route path="/goods"  component={ GoodsPage}></Route>
+          </Route>
+          
+            {/* <Route exact path="/" render={() => (
+              loggedIn ? (
+                <Redirect to="/dashboard"/>
+              ) : (
+                <PublicHomePage/>
+              )
+            )}/> */}
+              <Route path="/goods" render={Shop}></Route>
+              {/* 独占路由上面不会渲染出来 */}
+              <Route path="/goods"  render={() => 11}></Route>
               <Route path="/mine" render={Mine}></Route>
               <Route path="/shop/:id" render={Shop}></Route>
               <Route path="/parentPage" render={ParentPage}></Route>
@@ -59,7 +82,6 @@ class RouterPage2 extends Component {
               {/* <Route children={Page_404}></Route> */}
             {/* </Switch> */}
           </Router>
-        {/* } */}
       </div>
     );
   }
@@ -74,7 +96,6 @@ function Mine(props) {
   )
 }
 function Page_404(props) {
-  // console.log(props);
   return (
     <div>render -- Page_404</div>
   )

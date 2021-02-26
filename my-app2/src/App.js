@@ -16,6 +16,7 @@ import ProtalPage from './page/protalPage';
 import ReactRedux from './page/ReactRedux';
 import ContextCom from './page/ContextComponents';
 import RouterPage2 from './page/routerPage2';
+import PropsPage from './page/PropsPage';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
       {/* <ReactRedux /> */}
       {/* <ContextCom /> */}
       <RouterPage2 />
+      {/* <PropsPage /> */}
     </div>
   );
 }
