@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Link, Route, Switch} from '../kRouter/index'
 
 import GoodsPage from '../components/GoodsPage';
 import HomePage from '../components/HomePage';
+import ProviderRoute from '../components/ProviderRoute';
 
 // 路由还有BrowserRouter、HashRouter和MemoryRouter
 // 前两者的区别就是vue路由的区别一个道理
@@ -47,8 +48,8 @@ class RouterPage2 extends Component {
             <Link to="/shop/123">动态路由</Link>
             {/* 8. 嵌套路由 */}
             <Link to="/parentPage">嵌套路由</Link>
-            {/* <Switch> */}
-              <Route children={Page_404}></Route>
+            <Switch>
+              {/* <Route children={Page_404}></Route> */}
               {/* 4.children>>component>>render，源码规定，不在独占路由里，如果写了children,并且是函数，那么他是跟谁也不匹配，都展示的 */}
               {/* 5.children和render只能接收函数，components接收组件，如果使用内敛函数，那么将会认为两个组件都不想等，会一直卸载和挂载 
                 函数而不是函数组件
@@ -70,7 +71,8 @@ class RouterPage2 extends Component {
                 <PublicHomePage/>
               )
             )}/> */}
-              <Route path="/goods" render={Shop}></Route>
+            {/* <Route path="/goods" render={Shop}></Route> */}
+              <ProviderRoute path="/goods" render={Shop}></ProviderRoute>
               {/* 独占路由上面不会渲染出来 */}
               <Route path="/goods"  render={() => 11}></Route>
               <Route path="/mine" render={Mine}></Route>
@@ -79,8 +81,8 @@ class RouterPage2 extends Component {
       
               {/* 2.不写path的话，就是都会渲染出来，上面和path匹配的也会渲染出来 */}
               {/* 3.独占路由的时候，404不要写到最上面，不写path会当成跟谁都匹配，都只会渲染404了 */}
-              {/* <Route children={Page_404}></Route> */}
-            {/* </Switch> */}
+              <Route children={Page_404}></Route>
+            </Switch>
           </Router>
       </div>
     );

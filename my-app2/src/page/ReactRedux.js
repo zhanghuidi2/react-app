@@ -14,7 +14,12 @@ import bindActionCreators from '../kReactRedux/bindActionCreators'
   // 对象的方式的话dispath就不能使用了
   // 所以要返回一个方法
   // {
-  //   // add: () => ({type: 'ADD'})
+  //   // add: (a) => ({type: 'ADD', payload: a})
+      // 源码里自动用dispatch包裹了一层
+  // add : (a) => {
+  //       return (dispatch) => {dispatch({type: 'ADD', payload: a})}
+  //     }
+
   // }
   // 这样的话比较繁琐
   // (dispatch) => {
